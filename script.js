@@ -44,13 +44,15 @@ var workSchedule = [
     }
 ]
 
+// Set local storage
+localStorage.setItem("schedule", JSON.stringify(workSchedule));
+
 // Pull local storage
 var textInput = JSON.parse(localStorage.getItem("schedule"));
 console.log(textInput)
 if (textInput) {
     schedule = textInput;
-}
+};
 
-// Set local storage
-localStorage.setItem("schedule", JSON.stringify(workSchedule));
+
 

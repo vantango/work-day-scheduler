@@ -10,6 +10,7 @@ textarea{
   resize: none;
   color: #000000;
   border-left: 1px solid black;
+  border-top: 1px solid black;
   padding: 10px;
 }
 
@@ -28,14 +29,21 @@ textarea{
 .time-block{
   text-align: center;
   border-radius: 15px;
-  background-color: rgb(60, 60, 192);
+}
+
+.col-md-1 {
+  border-top: 1px solid #000000;
+}
+
+.col-md-10 {
+  border-color: black;
 }
 
 .row {
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;
-  background-color: lightblue;
+  padding-bottom:7%;
 }
 
 .hour {
@@ -65,9 +73,14 @@ textarea{
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
   color: white;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
+
 }
+

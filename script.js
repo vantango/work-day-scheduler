@@ -1,6 +1,56 @@
-const birthday = new Date('August 19, 1975 23:15:30');
-const day1 = birthday.getDay();
-// Sunday - Saturday : 0 - 6
+// Sets current date
+var currentDay = dayjs().format("dddd, MMMM D, YYYY");
+$(".date").text(currentDay);
 
-console.log(day1);
-// expected output: 2
+// Sets current time
+var currentTime = dayjs().hour();
+
+var workSchedule = [
+    {
+        time: "9AM",
+        event: ""
+    },
+    {
+        time: "10AM",
+        event: ""
+    },
+    {
+        time: "11AM",
+        event: ""
+    },
+    {
+        time: "12PM",
+        event: ""
+    },
+    {
+        time: "1PM",
+        event: ""
+    },
+    {
+        time: "2PM",
+        event: ""
+    },
+    {
+        time: "3PM",
+        event: ""
+    },
+    {
+        time: "4PM",
+        event: ""
+    },
+    {
+        time: "5PM",
+        event: ""
+    }
+]
+
+// Pull local storage
+var textInput = JSON.parse(localStorage.getItem("schedule"));
+console.log(textInput)
+if (textInput) {
+    schedule = textInput;
+}
+
+// Set local storage
+localStorage.setItem("schedule", JSON.stringify(workSchedule));
+

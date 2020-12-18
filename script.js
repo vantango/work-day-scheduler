@@ -2,36 +2,22 @@
 var currentDay = dayjs().format("dddd, MMMM D, YYYY");
 $(".date").text(currentDay);
 
-// Sets current time
+// Sets current time and sets it to a string so that the row function can read it
 var currentTime = dayjs().hour();
 var timeFormat = dayjs().format("h A").toString()
 
-
-// var workSchedule = [
-//     { time: "9AM", item: "" },
-//     { time: "10AM", item: "" },
-//     { time: "11AM", item: "" },
-//     { time: "12PM", item: "" },
-//     { time: "1PM", item: "" },
-//     { time: "2PM", item: "" },
-//     { time: "3PM", item: "" },
-//     { time: "4PM", item: "" },
-//     { time: "5PM", item: "" }
-// ]
-
-// 
+// Pulls saved user input from text area
 $(".row").each(function () {
     var hour = $(this).find(".time-block").text()
-    console.log("hour", hour)
     var textInput = localStorage.getItem(hour);
-    // console.log(textInput)
     $(this).find(".textarea").val(textInput)
 
-    // Setting color code to current hour
+    // Splits the time string so that the function only grabs the number
     hourNum = parseInt($(this).find(".time-block").text().split(" ")[0])
+
+    // Setting color code to current hour
     if (hourNum < currentTime) {
         $(this).addClass("past")
-        console.log(hour)
     } else if (hourNum === currentTime) {
         $(this).removeClass("past")
         $(this).addClass("present")
@@ -40,12 +26,6 @@ $(".row").each(function () {
         $(this).removeClass("present")
         $(this).addClass("future")
     }
-
-    // test code
-    // if (hour === timeFormat) {
-    //     console.log("test message")
-    //     $(this).addClass("present")
-    // }
 })
 
 // Sets local storage on button click

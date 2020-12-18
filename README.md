@@ -22,4 +22,4 @@ https://vantango.github.io/work-day-scheduler/
 #### Repository
 https://github.com/vantango/work-day-scheduler
 
-![work-day-planner-screenshot]()
+![work-day-planner-screenshot](https://github.com/vantango/work-day-scheduler/blob/main/images/workdayscheduler.PNG?raw=true)
